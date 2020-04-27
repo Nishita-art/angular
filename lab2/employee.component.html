@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <div class="input-group">
+            <h1>Add Employee</h1>
+        <table>
+            <header>{{result}}</header>
+            <tr>
+                <td><label for="id">ID:</label></td>
+                <input type="text" name="id" id="id" #id class="input-control"/>
+            </tr>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" name="name" id="name" #name class="input-control"/></td>
+            </tr>
+            <tr>
+                <td><label for="salary">Salary:</label></td>
+                <td><input type="text" name="salary" id="salary" #salary class="input-control"/></td>
+            </tr>
+            <tr>
+                <td><label for="depart">Department:</label></td>
+                <td><input type="text" name="depart' id="depart #depart class="input-control"/></td>
+            </tr>
+            <tr>
+                <td><button type="button" name="id" (click)="save(id,name,salary,depart)" value="save">Add Employee</button></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Show All Employee</h1>
+            <table class="table table-stipend">
+                <tr>
+                    <th>Id</th><th>Name</th><th>Salary</th><th>Department</th><th>Action</th>
+                </tr>
+                <tr *ngFor="let item of employee;let i=index"><td>{{item.id}}</td><td>{{item.name}}</td><td>{{item.salary}}</td><td>{{item.depart}}</td>
+
+
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="form-group">
+            <form (ngSubmit)="editrow(Nid,Nname,Nsal,Ndept)">
+                <h1>Update Employee</h1>
+                <table>
+
+                    <tr>
+                        <td><label for="id">ID:</label></td>
+                        <td><input type="text" name="id" id="id" [(ngModel)]="Nid"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" name="name" id="name" [(ngModel)]="Nname"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="salary">Salary:</label></td>
+                        <td><input type="text" name="salary" id="salary" [(ngModel)]="Nsal"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="depart">Depart:</label></td>
+                        <td><input type="text" name="depart" id="depart" [(ngModel)]="Ndept"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" class="btn btn.success" value="Update Employee"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
