@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <table>
+            <tr>
+                <td><label for="id">ID:</label></td>
+                <input type="text" name="id" id="id" #id/>
+            </tr>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" name="name" id="name" #name/></td>
+            </tr>
+            <tr>
+                <td><label for="salary">Salary:</label></td>
+                <td><input type="text" name="salary" id="salary" #salary/></td>
+            </tr>
+            <tr>
+                <td><label for="depart">Department:</label></td>
+                <td><input type="text" name="depart" id="depart" #depart/></td>
+            </tr>
+            <tr>
+                <td><button type="button" (click)="Save(id,name,salary,depart)">Add Employee</button></td>
+            </tr>
+        </table>
+        <p>{{id.value}} {{name.value()}} {{salary.value}} {{depart.value}}</p>
+        <div class="alert alert-warning">{{id.value}} {{name.value}}</div>
+    </div>
+</div>
